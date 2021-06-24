@@ -53,11 +53,12 @@
 
     <!-- Menu Mobile -->
     <ul id="mobile-navbar" class="sidenav">
-        <li><a href="#">Home</a></li>
+        <li><a  href="./home.php">Home</a></li>
         <li><a href="#">Procedimentos</a></li>
-        <li><a href="#">Cadastros</a></li>
+        <li><a style="color: #00ACC1;" href="./insereAnimal.php">Cadastrar Animal</a></li>
+        <li><a href="./insereVeterinario.php">Cadastrar Veterinário</a></li>
+        <li><a href="./insereProcedimento.php">Cadastrar Procedimento</a></li>
     </ul>
-
 
     <div class="container #fafafa grey lighten-5 z-depth-2">
         <div class=" #00acc1 cyan darken-1 col s12">

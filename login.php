@@ -24,30 +24,28 @@
       <h5 style="font-family:'Times New Roman', Times, serif;color: white;font-size:50px">Faça o Login</h5>
       <div class="section"></div>
 
-      <div class="container">
-        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+      <div class="container ">
+        <div class="z-depth-1 grey lighten-4 row " style="display: inline-block;width: 30vw;height: 380px; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
 
-          <form class="col s12" method="post">
-            <div class='row'>
+          <form action="conexaoLogin.php" class="col s12" method="post">
+            <div class='row col'>
               <div class='col s12'>
               </div>
             </div>
 
             <div class='row'>
               <div class='input-field col s12'>
-                <input class='validate' type='email' name='email' id='email' />
-                <label for='email'>Enter your email</label>
+                <input class='validate' type='text' name='username' id="username" required />
+                <label for='username'>Usuário</label>
               </div>
             </div>
 
             <div class='row'>
               <div class='input-field col s12'>
-                <input class='validate' type='password' name='password' id='password' />
-                <label for='password'>Enter your password</label>
+                <input class='validate' type='password' name='password' id='password' required />
+                <label for='password'>Senha</label>
               </div>
-              <label style='float: right;'>
-                <a class='pink-text' href='#!'><b>Forgot Password?</b></a>
-              </label>
+              
             </div>
 
             <br />
