@@ -1,3 +1,15 @@
+<?php
+include 'conectar.php';
+
+
+$pdo = Conexao::conectar();
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$sql = "select * from veterinario   ";
+$listaVet = $pdo->query($sql);
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -73,16 +85,80 @@
         <li><a href="./insereProcedimento.php">Cadastrar Procedimento</a></li>
     </ul>
 
+    <div class="container #fafafa grey lighten-5 z-depth-2">
+        <div class=" #00acc1 cyan darken-1 col s12">
+            <h4 class="center " style="color: white;">Listar Veterinário</h4>
+        </div>
 
 
-    <img src="./img/home2.png" alt="Ops!não foi possível exibir a imagem" class="cachorro" />
+        <div class="row">
+            <form action="cadastrarAnimal.php" method="POST" class="formulario s12">
+                <div class="row">
+                    <div>
+                        <table class="responsive-table col offset-s3 s6 centered" style="border: 2px solid black;">
+                            <thead>
+                                <tr>
+                                    <th>CPF</th>
+                                    <th>Nome </th>
+                                    <th>Cidade</th>
+                                    <th>Editar/Remover</th>
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <?php
+                                foreach ($listaVet as $veterinario) {
+                                ?>
+                                    <tr>
+                                        <td>
+                                            <?php
+                                            echo $veterinario['cpf'];
+                                            ?>
+                                        </td>
+
+                                        <td>
+                                            <?php
+                                            echo $veterinario['nome'];
+
+                                            ?>
+
+                                        </td>
+                                        <td>
+                                            <?php
+                                            echo $veterinario['cidade'];
+                                            ?>
+
+                                        </td>
+
+                                        <td>
+                                            <a class=" btn-small green" onclick="JavaScript:location.href='frmEditarVet.php?cpf=' +
+                                                <?php echo $veterinario['cpf']; ?>">Editar
+                                            </a>
+                                            <a class="btn-small red" type="submit">Remover</a>
+
+                                        </td>
+                                    <?php
+                                } ?>
+                                    </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
 
 
 
 
 
-    <script src="./js/index.js"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="./js/index.js"></script>
+    </div>
 
 
 

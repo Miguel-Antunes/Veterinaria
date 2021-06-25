@@ -12,14 +12,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-   
-
 
     <title>Cadastro Procedimento</title>
 </head>
 
 <body>
-    <div class="navbar-fixed">
+<div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper #00acc1 cyan darken-1">
                 <!-- Logo -->
@@ -32,13 +30,16 @@
 
                 <ul id="navbar-items" class="left hide-on-med-and-down">
                     <li><a href="./home.php">Home</a></li>
-                    <li><a href="#">Consultar procedimentos</a></li>
+                    <li><a class="dropdown-trigger" data-target="dropdown-menu-listar" href="#">Consultas<i class="material-icons right">arrow_drop_down</i></a></li>
                     <li>
                         <a class="dropdown-trigger" data-target="dropdown-menu" href="#">
                             Cadastros <i class="material-icons right">arrow_drop_down</i>
                         </a>
+
                     </li>
+
                 </ul>
+
 
                 <!-- Dropdown -->
                 <ul id="dropdown-menu" class="dropdown-content">
@@ -47,13 +48,19 @@
                     <li class="divider"></li>
                     <li><a href="./insereProcedimento.php">Cadastrar Procedimento</a></li>
                 </ul>
+                <ul id="dropdown-menu-listar" class="dropdown-content">
+                    <li><a href="./listarAnimal.php">Listar Animal</a></li>
+                    <li><a href="./listarVeterinario.php">Listar Veterinário</a></li>
+                    <li class="divider"></li>
+                    <li><a href="./listarProcedimento.php">Listar Procedimento</a></li>
+                </ul>
             </div>
         </nav>
     </div>
 
     <!-- Menu Mobile -->
     <ul id="mobile-navbar" class="sidenav">
-        <li><a  href="./home.php">Home</a></li>
+        <li><a href="./home.php">Home</a></li>
         <li><a href="#">Procedimentos</a></li>
         <li><a href="./insereAnimal.php">Cadastrar Animal</a></li>
         <li><a href="./insereVeterinario.php">Cadastrar Veterinário</a></li>
@@ -81,20 +88,6 @@
 
 
 
-                            <div class="input-field col offset-s3 s3">
-                                <input placeholder="Id do Prontuário" name="nomeAnimal" type="number" class="validate">
-                                <label>ID do Prontuário</label>
-                            </div>
-
-
-                            <div class="row">
-                                <div class="input-field col s3    ">
-                                    <input placeholder="Espécie" name="pesoAnimal" type="date" class="validate">
-                                    <label>Data Procedimento</label>
-                                </div>
-
-
-                            </div>
                             <div class="row">
 
                                 <div class="input-field col offset-s3 s6">
@@ -110,11 +103,134 @@
                                 </div>
 
                             </div>
+                            <div class="row">
+                                <div class="input-field col offset-s3 s3    ">
+                                    <input placeholder="Espécie" name="pesoAnimal" type="date" class="validate">
+                                    <label style="width: 150px">Data Procedimento</label>
+                                </div>
+
+                            </div>
+
+                            <table class="responsive-table col offset-s3 s6">
+
+
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <h6>
+
+                                                Dores
+                                            </h6>
+
+                                        </td>
+                                        <td>
+                                            <label>
+                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <span>N/A</span>
+                                            </label>
+
+                                        </td>
+
+                                        <td>
+                                            <label>
+                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <span>Moderada</span>
+                                            </label>
+
+                                        </td>
+                                        <td>
+                                            <label>
+                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <span>Intensa</span>
+                                            </label>
+
+                                        </td>
+
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>
+                                                Febre
+                                            </h6>
+
+                                        </td>
+                                        <td>
+                                            <label>
+                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <span>N/A</span>
+                                            </label>
+
+                                        </td>
+                                        <td>
+                                            <label>
+                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <span>Moderada</span>
+                                            </label>
+
+                                        </td>
+
+                                        <td>
+                                            <label>
+                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <span>Intensa</span>
+                                            </label>
+
+                                        </td>
+
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6>
+
+                                                Estado
+                                            </h6>
+
+                                        </td>
+
+                                        <td>
+                                            <label>
+                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <span>Tranquilo</span>
+                                            </label>
+
+                                        </td>
+                                        <td>
+                                            <label>
+                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <span>Deprimido</span>
+                                            </label>
+
+                                        </td>
+                                        <td>
+                                            <label>
+                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <span>Agressivo</span>
+                                            </label>
+
+                                        </td>
+
+
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+
+                            <div class="row">
+
+                                <div class="input-field col offset-s3 s6">
+                                    <textarea id="textarea2" class="materialize-textarea" data-length="12"></textarea>
+                                    <label for="textarea2">Principais Queixas</label>
+                                </div>
+                            </div>
 
                         </fieldset>
 
                     </div>
                 </div>
+
                 <div class="row">
                     <div>
 
@@ -123,14 +239,18 @@
                                 Procedimento
                             </legend>
 
+                            <label>Descrição
 
-                            aaaaaaaaaa
+                                <textarea>
+
+                        aaaaaaaaaa
                             aaaaaaaaaaa
                             aaaaaaaaaaa
-                            <br><br><br><br><br>
+                           
+                        </textarea>
 
 
-
+                            </label>
 
                         </fieldset>
 
@@ -148,13 +268,13 @@
 
         </div>
 
-
-
-
-
-
-
     </div>
+
+    <script>
+        $(document).ready(function() {
+            $('input#input_text, textarea#textarea2').characterCounter();
+        });
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./js/index.js"></script>
 </body>

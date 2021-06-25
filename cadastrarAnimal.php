@@ -9,7 +9,7 @@ $especie = $_POST['especAnimal'];
 $raca = $_POST['racaAnimal'];
 $peso = $_POST['pesoAnimal'];
 
-if (!empty($nomeProp) && !empty($cpfProp)){
+if (!empty($nomeProp) && !empty($cpfProp) & !empty($nomeAnimal)){
     $pdo = conexao::conectar(); 
    
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -18,7 +18,7 @@ if (!empty($nomeProp) && !empty($cpfProp)){
     $query->execute(array($nomeProp,$cpfProp, $nascimentoProp, $nomeAnimal, $especie, $raca, $peso));
     Conexao::desconectar(); 
 }
-else echo "Informe o CPFe o nome do proprietário!"; 
+else echo "Informe o nome do animal,CPF e  nome do proprietário!"; 
 
 header("location: home.php")
 ?>

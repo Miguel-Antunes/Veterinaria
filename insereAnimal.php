@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div class="navbar-fixed">
+<div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper #00acc1 cyan darken-1">
                 <!-- Logo -->
@@ -32,13 +32,16 @@
 
                 <ul id="navbar-items" class="left hide-on-med-and-down">
                     <li><a href="./home.php">Home</a></li>
-                    <li><a href="#">Consultar procedimentos</a></li>
+                    <li><a class="dropdown-trigger" data-target="dropdown-menu-listar" href="#">Consultas<i class="material-icons right">arrow_drop_down</i></a></li>
                     <li>
                         <a class="dropdown-trigger" data-target="dropdown-menu" href="#">
                             Cadastros <i class="material-icons right">arrow_drop_down</i>
                         </a>
+
                     </li>
+
                 </ul>
+
 
                 <!-- Dropdown -->
                 <ul id="dropdown-menu" class="dropdown-content">
@@ -47,10 +50,15 @@
                     <li class="divider"></li>
                     <li><a href="./insereProcedimento.php">Cadastrar Procedimento</a></li>
                 </ul>
+                <ul id="dropdown-menu-listar" class="dropdown-content">
+                    <li><a href="./listarAnimal.php">Listar Animal</a></li>
+                    <li><a href="./listarVeterinario.php">Listar Veterinário</a></li>
+                    <li class="divider"></li>
+                    <li><a href="./listarProcedimento.php">Listar Procedimento</a></li>
+                </ul>
             </div>
         </nav>
     </div>
-
     <!-- Menu Mobile -->
     <ul id="mobile-navbar" class="sidenav">
         <li><a  href="./home.php">Home</a></li>
