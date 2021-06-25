@@ -3,6 +3,7 @@ include 'conectar.php';
 
 $codanimal = $_GET['codanimal'];
 
+
 $pdo = Conexao::conectar();
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -18,7 +19,6 @@ $animal = $listaAnimal['nomeanimal'];
 $especie = $listaAnimal['especie'];
 $raca = $listaAnimal['raca'];
 $peso = $listaAnimal['peso'];
-
 
 
 Conexao::desconectar();
@@ -117,7 +117,7 @@ Conexao::desconectar();
 
                             <div class="row">
                                 <div class="input-field col s8">
-                                    <input type="hidden" id="id" name="codanimal" value="<?php echo $id; ?>">
+                                <input type="hidden" id="id" name="codanimal" value="<?php echo $codanimal; ?>">
 
                                 </div>
 
@@ -185,8 +185,8 @@ Conexao::desconectar();
 
                 <div class="row center">
 
-                    <button class="btn-small green" type="reset">Cancelar </button>
-                    <button class="btn-small red" type="submit">Remover</button>
+                    <a href="listarAnimal.php"a href="listarAnimal.php" class="btn-small" type="reset">Cancelar </a>
+                    <button class="btn-small " type="submit">Remover</button>
 
 
                 </div>

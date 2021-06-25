@@ -135,7 +135,10 @@ $listaVet = $pdo->query($sql);
                                             <a class=" btn-small green" onclick="JavaScript:location.href='frmEditarVet.php?cpf=' +
                                                 <?php echo $veterinario['cpf']; ?>">Editar
                                             </a>
-                                            <a class="btn-small red" type="submit">Remover</a>
+                                            <a class="btn-small red"
+                                            onclick="JavaScript:location.href='frmRmvVeterinario.php?cpf=' +
+                                                <?php echo $veterinario['cpf']; ?>"
+                                             type="submit">Remover</a>
 
                                         </td>
                                     <?php

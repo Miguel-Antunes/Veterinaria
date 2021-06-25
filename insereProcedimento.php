@@ -125,7 +125,7 @@
                                         </td>
                                         <td>
                                             <label>
-                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <input class="with-gap" name="group1" type="radio" />
                                                 <span>N/A</span>
                                             </label>
 
@@ -133,14 +133,14 @@
 
                                         <td>
                                             <label>
-                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <input class="with-gap" name="group1" type="radio"/>
                                                 <span>Moderada</span>
                                             </label>
 
                                         </td>
                                         <td>
                                             <label>
-                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <input class="with-gap" name="group1" type="radio"/>
                                                 <span>Intensa</span>
                                             </label>
 
@@ -157,14 +157,14 @@
                                         </td>
                                         <td>
                                             <label>
-                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <input class="with-gap" name="group2" type="radio"/>
                                                 <span>N/A</span>
                                             </label>
 
                                         </td>
                                         <td>
                                             <label>
-                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <input class="with-gap" name="group2" type="radio"/>
                                                 <span>Moderada</span>
                                             </label>
 
@@ -172,7 +172,7 @@
 
                                         <td>
                                             <label>
-                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <input class="with-gap" name="group2" type="radio"  />
                                                 <span>Intensa</span>
                                             </label>
 
@@ -191,21 +191,21 @@
 
                                         <td>
                                             <label>
-                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <input class="with-gap" name="group3" type="radio"/>
                                                 <span>Tranquilo</span>
                                             </label>
 
                                         </td>
                                         <td>
                                             <label>
-                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <input class="with-gap" name="group3" type="radio" />
                                                 <span>Deprimido</span>
                                             </label>
 
                                         </td>
                                         <td>
                                             <label>
-                                                <input class="with-gap" name="group3" type="radio" checked />
+                                                <input class="with-gap" name="group3" type="radio"  />
                                                 <span>Agressivo</span>
                                             </label>
 

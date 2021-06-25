@@ -188,8 +188,8 @@ Conexao::desconectar();
 
                 <div class="row center">
 
-                    <button class="btn-small red" type="reset">Cancelar </button>
-                    <button class="btn-small green" type="submit">Salvar</button>
+                    <a href="listarAnimal.php" class="btn-small " type="reset">Cancelar </a>
+                    <button class="btn-small " type="submit">Salvar</button>
 
 
                 </div>

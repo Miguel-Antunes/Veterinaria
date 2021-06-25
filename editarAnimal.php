@@ -21,5 +21,5 @@
    }
    else echo "Informe o nome do animal,CPF e  nome do proprietário!"; 
 
-header("location: home.php")
+header("location: listarAnimal.php")
 ?>

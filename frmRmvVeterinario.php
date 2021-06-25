@@ -1,4 +1,9 @@
 <?php
+
+
+
+?>
+<?php
 include 'conectar.php';
 
 $cpfVet = $_GET['cpf'];
@@ -96,7 +101,7 @@ Conexao::desconectar();
 
     <div class="container #fafafa grey lighten-5 z-depth-2">
         <div class=" #00acc1 cyan darken-1 col s12">
-            <h4 class="center " style="color: white;">Editar veterinário</h4>
+            <h4 class="center " style="color: white;">Remover veterinário</h4>
         </div>
 
 
@@ -105,7 +110,7 @@ Conexao::desconectar();
 
         <div class="row">
 
-            <form action="editarVet.php" method="POST" class="formulario s12">
+            <form action="RemoverVeterinario.php" method="POST" class="formulario s12">
 
 
                 <div class="row">
@@ -119,25 +124,25 @@ Conexao::desconectar();
 
                             <div class="row">
                                 <div class="input-field col offset-s3 s6">
-                                    <input placeholder="Nome" name="nomeVet" type="text" class="validate" value="<?php echo $nomeVet; ?>" required>
+                                    <input placeholder="Nome" name="nomeVet" type="text"  value="<?php echo $nomeVet; ?>" readonly>
                                     <label>Nome </label>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col offset-s3 s3    ">
-                                    <input placeholder="CPF" name="cpfVet" type="number" class="validate" value="<?php echo $cpfVet; ?>" required>
+                                    <input placeholder="CPF" name="cpfVet" type="number"  value="<?php echo $cpfVet; ?>" readonly>
                                     <label>CPF</label>
                                 </div>
                                 <div class="input-field col s3">
-                                    <input placeholder="Nascimento" name="nascimentoVet" type="date" class="validate" value="<?php echo $nascimentoVet; ?>">
+                                    <input placeholder="Nascimento" name="nascimentoVet" type="date"  value="<?php echo $nascimentoVet; ?>" readonly>
                                     <label>Nascimento</label>
                                 </div>
 
                             </div>
                             <div class="row">
                                 <div class="input-field col offset-s3 s3    ">
-                                    <input placeholder="Telefone" name="telefoneVet" type="tel" class="validate" value="<?php echo $telefoneVet; ?>">
+                                    <input placeholder="Telefone" name="telefoneVet" type="tel" value="<?php echo $telefoneVet; ?>" readonly>
                                     <label>Telefone</label>
                                 </div>
 
@@ -145,7 +150,7 @@ Conexao::desconectar();
                             </div>
                             <div class="row">
                                 <div class="input-field col offset-s3 s6    ">
-                                    <input placeholder="Endereço" name="enderecoVet" type="text" class="validate" value="<?php echo $enderecoVet; ?>">
+                                    <input placeholder="Endereço" name="enderecoVet" type="text" value="<?php echo $enderecoVet; ?>" readonly>
                                     <label>Endereço</label>
                                 </div>
 
@@ -154,11 +159,11 @@ Conexao::desconectar();
 
                             <div class="row">
                                 <div class="input-field col offset-s3 s3    ">
-                                    <input placeholder="Cidade" name="cidadeVet" type="text" class="validate"value="<?php echo $cidadeVet; ?>" required>
+                                    <input placeholder="Cidade" name="cidadeVet" type="text" value="<?php echo $cidadeVet; ?>" readonly>
                                     <label>Cidade</label>
                                 </div>
                                 <div class="input-field col offset-s1 s2">
-                                    <input placeholder="UF" name="ufVet" type="text" class="validate" value="<?php echo $ufVet; ?>">
+                                    <input placeholder="UF" name="ufVet" type="text" value="<?php echo $ufVet; ?>" readonly>
                                     <label>UF</label>
                                 </div>
 
