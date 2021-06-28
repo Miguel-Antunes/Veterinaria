@@ -1,5 +1,6 @@
 <?php
 include 'conectar.php';
+include 'autoriza.php';
 
 $cpfVet = $_GET['cpf'];
 
@@ -64,9 +65,11 @@ Conexao::desconectar();
                         </a>
 
                     </li>
-
                 </ul>
-
+                <a class="right" href="./logout.php" style="margin-right: 50px;">
+                Logout (<?php echo $_SESSION['username']?>)
+                </a>
+                
 
                 <!-- Dropdown -->
                 <ul id="dropdown-menu" class="dropdown-content">
@@ -87,27 +90,22 @@ Conexao::desconectar();
 
     <!-- Menu Mobile -->
     <ul id="mobile-navbar" class="sidenav">
-        <li><a href="./home.php">Home</a></li>
-        <li><a href="#">Procedimentos</a></li>
-        <li><a style="color: #00ACC1;" href="./insereAnimal.php">Cadastrar Animal</a></li>
+        <li><a style="color: #00ACC1;" href="./home.php">Home</a></li>
+        <li><a href="./insereAnimal.php">Cadastrar Animal</a></li>
         <li><a href="./insereVeterinario.php">Cadastrar Veterinário</a></li>
         <li><a href="./insereProcedimento.php">Cadastrar Procedimento</a></li>
+        <li class="divider"></li>
+        <li><a href="./listarAnimal.php">Listar Animal</a></li>
+        <li><a href="./listarVeterinario.php">Listar Veterinário</a></li>
+        <li><a href="./listarProcedimento.php">Listar Procedimento</a></li>
     </ul>
 
     <div class="container #fafafa grey lighten-5 z-depth-2">
         <div class=" #00acc1 cyan darken-1 col s12">
             <h4 class="center " style="color: white;">Editar veterinário</h4>
         </div>
-
-
-
-
-
         <div class="row">
-
             <form action="editarVet.php" method="POST" class="formulario s12">
-
-
                 <div class="row">
                     <div>
 
@@ -140,16 +138,12 @@ Conexao::desconectar();
                                     <input placeholder="Telefone" name="telefoneVet" type="tel" class="validate" value="<?php echo $telefoneVet; ?>">
                                     <label>Telefone</label>
                                 </div>
-
-
                             </div>
                             <div class="row">
                                 <div class="input-field col offset-s3 s6    ">
                                     <input placeholder="Endereço" name="enderecoVet" type="text" class="validate" value="<?php echo $enderecoVet; ?>">
                                     <label>Endereço</label>
                                 </div>
-
-
                             </div>
 
                             <div class="row">
@@ -161,31 +155,19 @@ Conexao::desconectar();
                                     <input placeholder="UF" name="ufVet" type="text" class="validate" value="<?php echo $ufVet; ?>">
                                     <label>UF</label>
                                 </div>
-
                             </div>
-
-
-
-
-
                         </fieldset>
-
                     </div>
                 </div>
+
                 <div class="row center">
 
                     <a href="listarVeterinario.php" class="btn-small" type="reset">Cancelar </a>
                     <button class="btn-small" type="submit">Salvar</button>
-
-
                 </div>
             </form>
-
         </div>
-
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="./js/index.js"></script>
 </body>
-
 </html>

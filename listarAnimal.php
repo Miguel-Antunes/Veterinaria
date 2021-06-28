@@ -1,5 +1,6 @@
 <?php
 include 'conectar.php';
+include 'autoriza.php';
 
 
 $pdo = Conexao::conectar();
@@ -18,8 +19,7 @@ $listaAnimal = $pdo->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="./css/home.css">
-    <title>Home</title>
-
+    <title>Listar Animal</title>
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -27,11 +27,7 @@ $listaAnimal = $pdo->query($sql);
     <!-- Compiled and minified CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-
-    <script type="text/javascript" src="js/jquery-1.4.2.js"></script>
-
-
+    <script type="text/javascript" src="js/jquery-1.4.2.js"></script> 
 </head>
 
 <body>
@@ -53,11 +49,12 @@ $listaAnimal = $pdo->query($sql);
                         <a class="dropdown-trigger" data-target="dropdown-menu" href="#">
                             Cadastros <i class="material-icons right">arrow_drop_down</i>
                         </a>
-
                     </li>
 
                 </ul>
-
+                <a class="right" href="./logout.php" style="margin-right: 50px;">
+               Logout (<?php echo $_SESSION['username']?>)
+                </a>
 
                 <!-- Dropdown -->
                 <ul id="dropdown-menu" class="dropdown-content">
@@ -78,20 +75,21 @@ $listaAnimal = $pdo->query($sql);
 
     <!-- Menu Mobile -->
     <ul id="mobile-navbar" class="sidenav">
-        <li><a style="color: #00ACC1;" href="./home.php">Home</a></li>
-        <li><a href="#">Procedimentos</a></li>
+        <li><a href="./home.php">Home</a></li>
         <li><a href="./insereAnimal.php">Cadastrar Animal</a></li>
         <li><a href="./insereVeterinario.php">Cadastrar Veterinário</a></li>
         <li><a href="./insereProcedimento.php">Cadastrar Procedimento</a></li>
+        <li class="divider"></li>
+        <li><a href="./listarAnimal.php" style="color: #00ACC1;">Listar Animal</a></li>
+        <li><a href="./listarVeterinario.php">Listar Veterinário</a></li>
+        <li><a href="./listarProcedimento.php">Listar Procedimento</a></li>
     </ul>
-
     <div class="container #fafafa grey lighten-5 z-depth-2">
         <div class=" #00acc1 cyan darken-1 col s12">
             <h4 class="center " style="color: white;">Listar animal</h4>
         </div>
 
-
-        <div class="row">
+       <div class="row">
             <form action="cadastrarAnimal.php" method="POST" class="formulario s12">
                 <div class="row">
                     <div>
@@ -112,9 +110,13 @@ $listaAnimal = $pdo->query($sql);
                                 ?>
                                     <tr>
                                         <td>
+                                        <a onclick="JavaScript:location.href='visualizarAnimal.php?codanimal=' +
+                                            <?php echo $animal['codanimal']; ?>">
                                             <?php
-                                            echo $animal['codanimal'];
+                                                echo $animal['codanimal'];
                                             ?>
+                                        </a>
+                                            
                                         </td>
 
                                         <td>
@@ -139,32 +141,18 @@ $listaAnimal = $pdo->query($sql);
                                             <a class=" btn-small red" onclick="JavaScript:location.href='frmRmvAnimal.php?codanimal=' +
                                                 <?php echo $animal['codanimal']; ?>">Remover
                                             </a>
-
                                         </td>
-                                    <?php
-                                } ?>
-                                    </tr>
-
+                                    <?php } ?>
+                                </tr>
                             </tbody>
                         </table>
-
                     </div>
                 </div>
-
             </form>
-
-        </div>
-
-
-
-
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <script src="./js/index.js"></script>
+        </div>     
     </div>
 
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/index.js"></script>
 </body>
-
 </html>

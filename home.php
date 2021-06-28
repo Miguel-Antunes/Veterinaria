@@ -1,3 +1,8 @@
+
+<?php
+include 'autoriza.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,6 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="./css/home.css">
+
+
     <title>Home</title>
 
 
@@ -41,11 +48,11 @@
                         <a class="dropdown-trigger" data-target="dropdown-menu" href="#">
                             Cadastros <i class="material-icons right">arrow_drop_down</i>
                         </a>
-
-                    </li>
-
+                    </li> 
                 </ul>
-
+                <a class="right" href="./logout.php" style="margin-right: 50px;">
+                Logout (<?php echo $_SESSION['username']?>)
+                </a>    
 
                 <!-- Dropdown -->
                 <ul id="dropdown-menu" class="dropdown-content">
@@ -67,25 +74,15 @@
     <!-- Menu Mobile -->
     <ul id="mobile-navbar" class="sidenav">
         <li><a style="color: #00ACC1;" href="./home.php">Home</a></li>
-        <li><a href="#">Procedimentos</a></li>
         <li><a href="./insereAnimal.php">Cadastrar Animal</a></li>
         <li><a href="./insereVeterinario.php">Cadastrar Veterinário</a></li>
         <li><a href="./insereProcedimento.php">Cadastrar Procedimento</a></li>
+        <li class="divider"></li>
+        <li><a href="./listarAnimal.php">Listar Animal</a></li>
+        <li><a href="./listarVeterinario.php">Listar Veterinário</a></li>
+        <li><a href="./listarProcedimento.php">Listar Procedimento</a></li>
     </ul>
-
-
-
     <img src="./img/home2.png" alt="Ops!não foi possível exibir a imagem" class="cachorro" />
-
-
-
-
-
     <script src="./js/index.js"></script>
-
-
-
-
 </body>
-
 </html>

@@ -1,6 +1,6 @@
 <?php
 include 'conectar.php';
-
+    
 $nomeProp = $_POST['nomeProp'];
 $cpfProp = $_POST['cpfProp'];
 $nascimentoProp = $_POST['nascProp'];
@@ -20,5 +20,5 @@ if (!empty($nomeProp) && !empty($cpfProp) & !empty($nomeAnimal)){
 }
 else echo "Informe o nome do animal,CPF e  nome do proprietário!"; 
 
-header("location: home.php")
+header("location:listarAnimal.php")
 ?>

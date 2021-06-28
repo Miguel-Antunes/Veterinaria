@@ -21,6 +21,6 @@ if (!empty($cpf) && !empty($nome) && !empty($cidade)){
 }
 else echo "Informe o CPF, nome e a cidade do Veterinário!"; 
 
-header("location: home.php")
+header("location: listarVeterinario.php")
 
 ?>

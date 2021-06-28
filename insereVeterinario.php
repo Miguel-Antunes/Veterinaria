@@ -1,3 +1,10 @@
+<?php
+
+include 'autoriza.php';
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,15 +13,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-
     <!-- Compiled and minified CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-
-
     <title>Cadastro Veterinário</title>
 </head>
 
@@ -37,11 +38,12 @@
                         <a class="dropdown-trigger" data-target="dropdown-menu" href="#">
                             Cadastros <i class="material-icons right">arrow_drop_down</i>
                         </a>
-
                     </li>
-
                 </ul>
-
+                <a class="right" href="./logout.php" style="margin-right: 50px;">
+                Logout (<?php echo $_SESSION['username']?>)
+                </a>
+                
 
                 <!-- Dropdown -->
                 <ul id="dropdown-menu" class="dropdown-content">
@@ -63,10 +65,13 @@
     <!-- Menu Mobile -->
     <ul id="mobile-navbar" class="sidenav">
         <li><a href="./home.php">Home</a></li>
-        <li><a href="#">Procedimentos</a></li>
         <li><a href="./insereAnimal.php">Cadastrar Animal</a></li>
-        <li><a style="color: #00ACC1;" href="./insereVeterinario.php">Cadastrar Veterinário</a></li>
+        <li><a href="./insereVeterinario.php" style="color: #00ACC1;">Cadastrar Veterinário</a></li>
         <li><a href="./insereProcedimento.php">Cadastrar Procedimento</a></li>
+        <li class="divider"></li>
+        <li><a href="./listarAnimal.php">Listar Animal</a></li>
+        <li><a href="./listarVeterinario.php">Listar Veterinário</a></li>
+        <li><a href="./listarProcedimento.php">Listar Procedimento</a></li>
     </ul>
 
 
@@ -75,20 +80,14 @@
             <h4 class="center " style="color: white;">Cadastrar Veterinário</h4>
         </div>
 
-
         <div class="row">
-
             <form action="cadastarVeterinario.php" method="POST" class="formulario s12">
-
-
                 <div class="row">
                     <div>
-
                         <fieldset class="col offset-s1 s10" style="border: 2px solid black;">
                             <legend style="text-align: center;">
                                 Veterinário
                             </legend>
-
 
                             <div class="row">
                                 <div class="input-field col offset-s3 s6">
@@ -99,30 +98,27 @@
 
                             <div class="row">
                                 <div class="input-field col offset-s3 s3    ">
-                                    <input placeholder="CPF" name="cpfVet" type="number" class="validate" required>
+                                    <input placeholder="CPF" name="cpfVet" type="text" class="validate" maxlength="11" required>
                                     <label>CPF</label>
                                 </div>
                                 <div class="input-field col s3">
                                     <input placeholder="Nascimento" name="nascimentoVet" type="date" class="validate">
                                     <label>Nascimento</label>
                                 </div>
-
                             </div>
+
                             <div class="row">
                                 <div class="input-field col offset-s3 s3    ">
-                                    <input placeholder="Telefone" name="telefoneVet" type="tel" class="validate">
+                                    <input placeholder="Telefone" name="telefoneVet" type="tel" maxlength="11" class="validate">
                                     <label>Telefone</label>
                                 </div>
-
-
                             </div>
+                            
                             <div class="row">
                                 <div class="input-field col offset-s3 s6    ">
                                     <input placeholder="Endereço" name="enderecoVet" type="text" class="validate">
                                     <label>Endereço</label>
                                 </div>
-
-
                             </div>
 
                             <div class="row">
@@ -134,35 +130,19 @@
                                     <input placeholder="UF" name="ufVet" type="text" class="validate">
                                     <label>UF</label>
                                 </div>
-
                             </div>
-
-
-
-
-
                         </fieldset>
-
                     </div>
                 </div>
-                <div class="row center">
 
+                <div class="row center">
                     <button class="btn-small" type="reset">Cancelar </button>
                     <button class="btn-small" type="submit">Salvar</button>
-
-
                 </div>
             </form>
-
         </div>
-
-
-
-
-
-
-
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./js/index.js"></script>
 </body>

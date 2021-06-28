@@ -1,5 +1,7 @@
 <?php
 include 'conectar.php';
+include 'autoriza.php';
+
 
 $codanimal = $_GET['codanimal'];
 
@@ -67,10 +69,11 @@ Conexao::desconectar();
                         <a class="dropdown-trigger" data-target="dropdown-menu" href="#">
                             Cadastros <i class="material-icons right">arrow_drop_down</i>
                         </a>
-
                     </li>
-
                 </ul>
+                <a class="right" href="./logout.php" style="margin-right: 50px;">
+               Logout (<?php echo $_SESSION['username']?>)
+                </a>
 
 
                 <!-- Dropdown -->
@@ -93,21 +96,19 @@ Conexao::desconectar();
     <!-- Menu Mobile -->
     <ul id="mobile-navbar" class="sidenav">
         <li><a href="./home.php">Home</a></li>
-        <li><a href="#">Procedimentos</a></li>
-        <li><a style="color: #00ACC1;" href="./insereAnimal.php">Cadastrar Animal</a></li>
+        <li><a href="./insereAnimal.php">Cadastrar Animal</a></li>
         <li><a href="./insereVeterinario.php">Cadastrar Veterinário</a></li>
         <li><a href="./insereProcedimento.php">Cadastrar Procedimento</a></li>
+        <li class="divider"></li>
+        <li><a href="./listarAnimal.php">Listar Animal</a></li>
+        <li><a href="./listarVeterinario.php">Listar Veterinário</a></li>
+        <li><a href="./listarProcedimento.php">Listar Procedimento</a></li>
     </ul>
 
     <div class="container #fafafa grey lighten-5 z-depth-2">
         <div class=" #00acc1 cyan darken-1 col s12">
             <h4 class="center " style="color: white;">Editar animal</h4>
         </div>
-
-
-
-
-
         <div class="row">
 
             <form action="editarAnimal.php" method="POST" class="formulario s12">
@@ -142,7 +143,7 @@ Conexao::desconectar();
 
                                 </div>
                                 <div class="input-field col s3">
-                                    <input placeholder="Nascimento" name="nascProp" type="date" class="validate" value="<?php echo $nascimentoProp; ?>">
+                                    <input placeholder="Nascimento" name="nascProp" type="date" class="validate" value="<?php echo $nascimento; ?>">
                                     <label>Nascimento</label>
 
                                 </div>
@@ -201,5 +202,4 @@ Conexao::desconectar();
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="./js/index.js"></script>
 </body>
-
 </html>
